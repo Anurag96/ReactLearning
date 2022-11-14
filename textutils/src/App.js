@@ -1,8 +1,13 @@
 import { useState } from 'react';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -35,14 +40,50 @@ function App() {
       showAlert('Light Mode has been enabled','success')
     }
   }
+  const [myStyle,setMyStyle] = useState({
+    color:'black',
+    backgroundColor: 'white'
+})
+  const toggleStyle = ()=>{
+    if(myStyle.color==='black'){
+        setMyStyle({
+            color:'white',
+            backgroundColor: 'black',
+            border:'2px solid white'
+        })
+        setMode('Enable Dark Mode')
+    }else{
+        setMyStyle({
+            color:'black',
+            backgroundColor: 'white'
+        })
+        setMode('Enable Light Mode')
+    }
+}
   return (
     <>
+    <Router>
+        {/* <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav> */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
-      <div className="container">
-      <TextForm showAlert={showAlert} mode={mode} heading="Enter the text to analyse below"/>
-      {/* <About/> */}
+      <div className="container my-3">
+      <Routes>
+          <Route exact path="/about" element={<About toggleStyle={toggleStyle}/>}>
+          </Route>
+          <Route exact path="/" element={<TextForm showAlert={showAlert} mode={mode} heading="Enter the text to analyse below"/>}> 
+          </Route>
+        </Routes>
       </div>
+      </Router>
      </>
   );
 }
