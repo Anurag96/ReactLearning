@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 export class NewsItem extends Component {
 
    render() {
+
+    //Array Destructuring
    let {title,description,urlToImage,url,author,date}=this.props;
  
     return (
