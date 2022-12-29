@@ -21,31 +21,33 @@ const News = (props) => {
 
     useEffect(() => {
         updateNews()
-    }, [])
+    })
 
 
     const handlePrevClick = async () => {
 
         let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page + 1}&pageSize=${props.pageSize}`
+        setPage(page - 1)
         let data = await fetch(url);
         let parsedData = await data.json();
-        setPage(page - 1)
+        // setPage(page - 1)
         setArticles(parsedData.articles)
 
     }
     const handleNextClick = async () => {
 
         let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page + 1}&pageSize=${props.pageSize}`
+        setPage(page+1)
         let data = await fetch(url);
         let parsedData = await data.json();
-        setPage(page + 1)
+        // setPage(page + 1)
         setArticles(parsedData.articles)
     }
 
 
     return (
         <div className='container my-3 mx-8'>
-            <h1 className='text-center'> TOP {props.category.toUpperCase()} NEWS</h1>
+            <h1 className='text-center' style={{marginTop:'90px'}}> TOP {props.category.toUpperCase()} NEWS</h1>
 
             <div className="row">
                 {articles?.map((element) => {
