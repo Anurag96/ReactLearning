@@ -3,8 +3,7 @@ import { TodoItem } from './TodoItem'
 
 const Todos = ({todos,onDelete}) => {
   let myStyle={
-    minHeight:"56vh",
-    margin: "40px"
+    minHeight:"56vh"
   }
   return (
     <div className='container' style={myStyle}>
