@@ -29,11 +29,23 @@ function App() {
       return e!==todo;
     }))
   }
+  const addTodo =(title,desc)=>{
+      // console.log("Adding the details",title,desc);
+      // let sno =  todos[todos.length-1].sno+1
+      let sno =  todos.length==0 ? 1 : todos[todos.length-1].sno + 1
+    
+      const myTodo ={
+        sno:sno,
+        title:title,
+        desc:desc
+      }
+      setTodos([...todos,myTodo])
+  }
 
   return (
     <div>
       <Navbar title="Todo-List" searchBar={false}/>
-      <AddTodo/>
+      <AddTodo addTodo={addTodo}/>
       <Todos todos={todos} onDelete={onDelete}/>
       <Footer/>
     </div>
