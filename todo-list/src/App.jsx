@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
 import Todos from './components/Todos'
+import AddTodo from './components/AddTodo'
 
 function App() {
   const [todos,setTodos] = useState([
@@ -22,9 +23,9 @@ function App() {
     }
   ])
   const onDelete =(todo)=>{
-    console.log('Delete',todo)
+    // console.log('Delete',todo)
     setTodos(todos.filter((e)=>{
-      console.log("Deleted",e)
+      // console.log("Deleted",e)
       return e!==todo;
     }))
   }
@@ -32,6 +33,7 @@ function App() {
   return (
     <div>
       <Navbar title="Todo-List" searchBar={false}/>
+      <AddTodo/>
       <Todos todos={todos} onDelete={onDelete}/>
       <Footer/>
     </div>
