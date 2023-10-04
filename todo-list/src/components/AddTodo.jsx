@@ -7,8 +7,9 @@ export default function AddTodo(props) {
         e.preventDefault(e);
         if (!title || !desc) {
             alert("Title or Description is empty")
-        }
-        props.addTodo(title,desc)
+        }else{props.addTodo(title,desc)
+        setTitle("")
+        setDesc('')}
     }
     return (
         <div className='container my-3'>
