@@ -5,11 +5,11 @@ import TodoHome from './components/TodoHome'
 
 function App() {
 
-  
+
   return (
     <>
       <Navbar title="Todo-List" searchBar={false} />
-      <TodoHome/>
+      <TodoHome />
       <Footer />
     </>
   )
