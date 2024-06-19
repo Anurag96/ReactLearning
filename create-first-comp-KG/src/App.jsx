@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import AppName from './component/AppName'
-import AddTodo from './component/AddTodo'
-import TodoItem1 from './component/TodoItem1'
+import AppName from './todo-basic/AppName'
+import AddTodo from './todo-basic/AddTodo'
+import TodoItem1 from './todo-basic/TodoItem1'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +21,9 @@ function App() {
       <center className='todo-container'>
         <AppName />
         <AddTodo />
-        <TodoItem1 todoItems={todoItems} />
+        <div className="item-container">
+          <TodoItem1 todoItems={todoItems} />
+        </div>
       </center>
 
     </>
