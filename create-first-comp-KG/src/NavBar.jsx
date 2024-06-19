@@ -16,7 +16,7 @@ function NavBar() {
                                 <Link className="navbar-brand" to="/clock-basic">Clock 1.0</Link>
                             </li>
                             <li class="nav-item">
-                                <Link className="navbar-brand" to="/fragment-basic">Fragment 1.0</Link>
+                                <Link className="navbar-brand" to="/fragment-basic">Heathy Food 1.0</Link>
                             </li>
                         </ul>
                     </div>

@@ -8,13 +8,18 @@ import NavBar from './NavBar.jsx'
 import Cloak from './cloak-basic/Cloak.jsx'
 import Welcome from './Welcome.jsx'
 import Fragment from './VegetableFragment/Fragment.jsx'
+import Todo from './todo-basic/Todo.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* <Todo /> */}
     <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path='/' element={<Welcome />} />
+      </Routes>
+      <Routes>
+        <Route path='/todo-basic' element={<Todo />} />
       </Routes>
       <Routes>
         <Route path='/todo-basic' element={<App />} />
