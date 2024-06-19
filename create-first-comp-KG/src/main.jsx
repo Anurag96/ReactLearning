@@ -9,6 +9,7 @@ import Cloak from './cloak-basic/Cloak.jsx'
 import Welcome from './Welcome.jsx'
 import Fragment from './VegetableFragment/Fragment.jsx'
 import Todo from './todo-basic/Todo.jsx'
+import Calculator from './calculator-basic/calculator.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -29,6 +30,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Routes>
       <Routes>
         <Route path='/fragment-basic' element={<Fragment />} />
+      </Routes>
+      <Routes>
+        <Route path='/calculator-basic' element={<Calculator />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

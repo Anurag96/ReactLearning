@@ -18,6 +18,9 @@ function NavBar() {
                             <li className="nav-item">
                                 <Link className="navbar-brand" to="/fragment-basic">Heathy Food 1.0</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="navbar-brand" to="/calculator-basic">Calculator 1.0</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
